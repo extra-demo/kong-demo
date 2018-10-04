@@ -9,11 +9,11 @@ api gateway use kong, backend use php, nodejs, golang etc.
     - go 1.11
     - kong 0.14.1 （kong:0.14.1-alpine）
     - kong database (cassandra:3)
-    - kong dashboard
+    - kong dashboard v3.5.0
 
 ## step by step
 
-### install use docker
+### install kong
 
 1. kong-network
 
@@ -63,7 +63,14 @@ docker run --rm \
     kong:0.14.1-alpine
 ```
 
+5. start kong dashboard
+
+```bash
+docker run --rm -p 8080:8080 pgbi/kong-dashboard start --kong-url http://localhost:8001
+```
+
 ## links
 
- - https://github.com/Kong/kong
- - https://getkong.org
+- https://github.com/Kong/kong
+- https://getkong.org
+- https://github.com/PGBI/kong-dashboard
